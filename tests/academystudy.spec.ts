@@ -1,5 +1,5 @@
 import {test, expect} from "@playwright/test";
-import {AcademystudyLoginPage} from "@pages/academystudyLoginPage";
+import {AcademystudyLoginPage} from "@pages/AcademystudyLoginPage";
 
 
 const username: string = "test1234";
