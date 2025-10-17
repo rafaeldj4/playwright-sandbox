@@ -7,17 +7,25 @@ on:
 jobs:
   test:
     timeout-minutes: 60
+    env:
+      SSO_PROD: ${{secrets.SSO_PROD}}
+      SSO_STG: ${{secrets.SSO_STG}}
+      SSO_QA: ${{secrets.SSO_QA}}
+      USER_NAME_PROD: ${{secrets.USER_NAME_PROD}}
+      USER_NAME_QA: ${{secrets.USER_NAME_QA}}
+      USER_PASSWORD: ${{secrets.USER_PASSWORD}}
+      USER_NEW_PASSWORD: ${{secrets.USER_NEW_PASSWORD}}
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
-    - name: Install dependencies
+    - name: Install proyect dependencies
       run: npm ci
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-    - name: Run Playwright tests
+    - name: Install Playwright Browsers (Only Chromium)
+      run: npx playwright install chromium
+    - name: Run All tests
       run: npx playwright test
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
