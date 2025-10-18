@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Playwright + Allure
 on:
   push:
     branches: [main, master]
@@ -27,6 +27,21 @@ jobs:
         run: npx playwright install chromium
       - name: Run All tests
         run: npx playwright test
+
+      - name: Install Java (OpenJDK 17)
+        run: sudo apt-get update && sudo apt-get install -y openjdk-17-jre
+
+      - name: Generate Allure report
+        run: npx allure generate "allure-results" -o "allure-report" --clean
+
+      - name: Upload Allure HTML
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report
+          retention-days: 30
+
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
