@@ -38,13 +38,6 @@ jobs:
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
-          name: allure-report
+          name: Sanity Test
           path: allure-report
-          retention-days: 30
-
-      - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
-        with:
-          name: Evidencias de pruebas
-          path: test-results
           retention-days: 15
