@@ -1,0 +1,18 @@
+node_modules/
+dist/
+build/
+coverage/
+playwright-report/
+test-results/
+allure-results/
+allure-report/
+
+# env
+.env
+.env.*
+
+# lockfiles generados por el gestor
+package-lock.json
+# (si usas yarn/pnpm, ignora el que corresponda)
+# yarn.lock
+# pnpm-lock.yaml

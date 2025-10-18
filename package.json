@@ -7,7 +7,9 @@
     "test:headed": "playwright test --headed",
     "allure:generate": "allure generate ./allure-results -o ./allure-report --clean",
     "allure:open": "allure open ./allure-report",
-    "allure:serve": "allure serve ./allure-results"
+    "allure:serve": "allure serve ./allure-results",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +21,7 @@
     "allure-commandline": "^2.34.1",
     "allure-playwright": "^3.4.1",
     "dotenv": "^17.2.3",
+    "prettier": "^3.6.2",
     "tsconfig-paths": "^4.2.0"
   }
 }

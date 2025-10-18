@@ -45,19 +45,19 @@ Proyecto de pruebas end-to-end con Playwright Test y TypeScript.
 
 ## Instalación
 
-1) Instalar dependencias:
+1. Instalar dependencias:
 
 ```
 npm install
 ```
 
-2) Instalar navegadores de Playwright (primera vez):
+2. Instalar navegadores de Playwright (primera vez):
 
 ```
 npx playwright install
 ```
 
-3) Crear `.env` a partir de `.env.example` y completar valores.
+3. Crear `.env` a partir de `.env.example` y completar valores.
 
 ## Ejecución de Pruebas
 
@@ -90,4 +90,3 @@ npx playwright test tests/academystudy.spec.ts
 
 - Variables de entorno sin tipado:
   - Mantén `env.d.ts` alineado con las claves realmente usadas en los tests.
-
